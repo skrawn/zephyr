@@ -6,20 +6,20 @@
 
 /**
  * @file
- * @brief _Restrict definition
+ * @brief _MLIBC_RESTRICT definition
  *
- * The macro "_Restrict" is intended to be private to the minimal libc library.
- * It evaluates to the "restrict" keyword when a C99 compiler is used, and
- * to "__restrict__" when a C++ compiler is used.
+ * The macro "_MLIBC_RESTRICT" is intended to be private to the minimal libc
+ * library.  It evaluates to the "restrict" keyword when a C99 compiler is
+ * used, and to "__restrict__" when a C++ compiler is used.
  */
 
-#if !defined(_Restrict_defined)
-#define _Restrict_defined
+#if !defined(_MLIBC_RESTRICT_defined)
+#define _MLIBC_RESTRICT_defined
 
-#if defined(__cplusplus) || defined(__xtensa__)
-	#define _Restrict __restrict__
+#if defined(__cplusplus)
+	#define _MLIBC_RESTRICT __restrict__
 #else
-	#define _Restrict restrict
+	#define _MLIBC_RESTRICT restrict
 #endif
 
 #endif
